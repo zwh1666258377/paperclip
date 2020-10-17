@@ -11,7 +11,7 @@ import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import path from 'path';
 import dotenv from 'dotenv';
-import { test } from './api/test';
+import { getFollowers } from './api/get-followers';
 
 dotenv.config('../.env' as any);
 
@@ -106,7 +106,7 @@ class App {
   };
 
   setRoutes = () => {
-    test(this.app);
+    getFollowers(this.app);
   };
 
   connectDb = () => {
